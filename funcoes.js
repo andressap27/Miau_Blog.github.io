@@ -59,7 +59,6 @@ function Enviar() {
     }
 
 }
-// scripts.js
 
 // Pega o lightbox
 var lightbox = document.getElementById('lightbox');
