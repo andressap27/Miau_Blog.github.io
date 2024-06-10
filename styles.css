@@ -1,0 +1,606 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #680930; /* Cor de fundo do cabeçalho */
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: #dfc2ce;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 30px;
+    position: relative;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #dfc2ce;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Times New Roman', Times, serifbv;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #411226; /* Cor ao passar o mouse */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #680930;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    margin-right: 0;
+}
+
+.dropdown-content li a {
+    color: #dfc2ce;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #9e6576;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos do banner */
+.banner {
+    position: relative;
+    background-image: url('imagens/gatos_1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #dfc2ce;
+    padding: 20px;
+    overflow: hidden; /* Oculta conteúdo que ultrapassa as dimensões do banner */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura com transparência */
+}
+
+.banner:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.banner h2 {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    z-index: 1; /* Garante que o texto fique sobre a sobreposição */
+    transition: color 0.3s ease; /* Transição suave para a cor do texto */
+}
+
+.banner:hover h2 {
+    color: #4e0524; /* Cor ao passar o mouse */
+}
+
+/* Estilos das seções */
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 25px;
+    color: #dfc2ce;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.7;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    color: #300216;
+}
+
+section h3 {
+    font-size: 25px;
+    line-height: 1.7;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #4e0524;
+}
+
+.text-and-image {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 30px; /* Espaço entre o texto e a imagem */
+}
+
+.text {
+    flex: 4; /* O texto ocupará mais espaço */
+}
+
+.header_right {
+    flex: 3; /* A imagem ocupará menos espaço */
+}
+
+.header_image img {
+    max-width: 100%;
+    height: auto; 
+    border-radius: 3%;
+}
+
+/* Estilos do rodapé */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.social-icon {
+    color: #dfc2ce; /* Cor padrão dos ícones */
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: #411226; /* Cor ao passar o mouse */
+    transform: scale(1.2); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+}
+
+footer {
+    background-color: #4e0524;
+    color: #dfc2ce;
+    text-align: center;
+    padding: 20px 0;
+    clear: both;
+    width: 100%;
+    position: relative;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+footer a {
+    color: #dfc2ce;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Formulário de contato */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra de fundo */
+    background-color: #ebdee4; /* Cor de fundo do formulário */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #680930;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #dfc2ce;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #dfc2ce;
+    /* Aumentar a altura da caixa de texto */
+    height: 40px;
+    /* Adicionar margem inferior para espaçamento */
+    margin-bottom: 10px;
+}
+
+
+button[type="submit"] {
+    background-color: #680930;
+    color: #dfc2ce;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+button[type="submit"]:hover {
+    background-color: #9e466a;
+}
+
+/* Botão de voltar ao topo */
+#backToTop {
+    border-radius: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #680930;
+    color: #dfc2ce;
+    border: none;
+    cursor: pointer;
+}
+
+#backToTop:hover {
+    background-color: #9e466a;
+}
+
+/* Estilos para o botão "Saiba Mais" */
+.btn-buttom {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 20px;
+    background-color: #680930;
+    color: #dfc2ce;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buttom:hover {
+    background-color: #9e466a;
+}
+
+/* Tópicos */
+#topics {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.topic {
+    background-color: #f4eef1;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 0  calc(30% - 30px); /* Colunas menores */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topic img {
+    max-width: 200%;
+    max-height: 250px; /* Ajuste a altura máxima das imagens */
+    border-radius: 8px;
+}
+
+.topic h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #4e0524;
+}
+
+.topic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos do link sobre a autora */
+.sobre_a_autora {
+    background-color: #680930;
+    border-radius: 10px;
+    color: #dfc2ce;
+    padding: 10px 20px; /* Espaçamento interno */
+    text-decoration: none; /* Remover sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.sobre_a_autora:hover {
+    background-color: #9e6576; /* Cor ao passar o mouse */
+}
+
+/* Estilização para a página sobre_a_autora.html */
+#portfolio {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align:justify;
+    background-color: #300216;
+}
+
+#portfolio .container {
+    background-color: #e7cddc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#portifolio h1 {
+    resize: vertical;
+    color: #680930;
+}
+
+#portfolio h2 {
+    text-align: center;
+    color: #680930;
+}
+
+#portfolio .autora-foto {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+#portfolio h3 {
+    color: #6e0e36;
+    text-align: center;
+    font-size: 23px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+#portfolio p, #portfolio ul {
+    color: #3e061c;
+    line-height: 1.7;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#portfolio ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#portfolio ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+#portfolio ul li a {
+    color: #e90765;
+    text-decoration: none;
+}
+
+#portfolio ul li a:hover {
+    text-decoration: underline;
+}
+
+.author-info {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o centro da imagem e do texto */
+    gap: 100px; /* Espaço entre a imagem e o texto */
+}
+
+.autora-foto {
+    max-width: 500px; /* Define um tamanho máximo para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.author-name {
+    font-size: 2.5em;
+    font-weight: bold; 
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Contato na seção Sobre Mim */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 0;
+}
+
+.social-buttons .social-icon {
+    color: #680930;
+    font-size: 25px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-buttons .social-icon:hover {
+    color: #411226;
+    transform: scale(1.1);
+}
+
+/* Lightbox */
+/* styles.css */
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 90vh; /* 90% da altura da janela */
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.lightbox button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+}
+
+.lightbox button.prev {
+    left: 15px;
+}
+
+.lightbox button.next {
+    right: 15px;
+}
+
+/* Galeria */
+#galeria {
+    padding: 20px;
+    text-align: center;
+}
+
+#galeria h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #680930;
+}
+
+#galeria .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#galeria .gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#galeria .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
